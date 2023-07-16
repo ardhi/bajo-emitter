@@ -3,8 +3,8 @@ import collectEvents from '../lib/collect-events.js'
 
 async function init () {
   const { importPkg, getConfig } = this.bajo.helper
-  const _ = await importPkg('lodash')
-  const opts = _.pick(getConfig('bajoEmitter'), ['maxListeners', 'verboseMemoryLeak', 'ignoreErrors'])
+  const { pick } = await importPkg('lodash-es::bajo')
+  const opts = pick(getConfig('bajoEmitter'), ['maxListeners', 'verboseMemoryLeak', 'ignoreErrors'])
   opts.wildcard = true
   opts.delimiter = '.'
   this.bajoEmitter.instance = new EventEmitter2(opts)
