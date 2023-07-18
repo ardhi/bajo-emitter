@@ -3,7 +3,7 @@ import collectEvents from '../lib/collect-events.js'
 
 async function init () {
   const { importPkg, getConfig } = this.bajo.helper
-  const { pick } = await importPkg('lodash-es::bajo')
+  const { pick } = await importPkg('lodash-es')
   const opts = pick(getConfig('bajoEmitter'), ['maxListeners', 'verboseMemoryLeak', 'ignoreErrors'])
   opts.wildcard = true
   opts.delimiter = '.'
