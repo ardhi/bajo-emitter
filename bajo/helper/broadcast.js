@@ -8,8 +8,11 @@
  * @param {Object} params - Event parameters/arguments
  */
 
-function broadcast (msg, meta) {
-  this.bajoEmitter.instance.emit('bajoEmitter.broadcastPool', msg, meta)
+async function broadcast ({ msg, from, to }) {
+  const { importPkg, log } = this.bajo.helper
+  const { find } = await importPkg('lodash-es')
+  if (!find(this.bajoEmitter.broadcastPools, { name: to })) log.error('Unknown broadcast pool \'%s\'', to)
+  else this.bajoEmitter.instance.emit('bajoEmitter.broadcastPool', { msg, from, to })
 }
 
 export default broadcast
