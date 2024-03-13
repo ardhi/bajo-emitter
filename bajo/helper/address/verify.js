@@ -6,6 +6,7 @@ async function verify (address) {
   if (!isSet(destination) || isEmpty(connection) || isEmpty(transport)) throw error('Invalid address \'%s\'', address)
   if (!this[transport]) throw error('Unknown transport \'%s\' or transport isn\'t loaded yet', transport)
   if (!find(this[transport].connections, { name: connection })) throw error('Unknown connection \'%s@%s\'', connection, transport)
+  return true
 }
 
 export default verify

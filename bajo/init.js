@@ -5,9 +5,8 @@ async function handler ({ item }) {
   const { addressVerify } = this.bajoEmitter.helper
   const { importPkg, error } = this.bajo.helper
   const { has, isString } = await importPkg('lodash-es')
-  if (!has(item, 'name')) throw error('A pool must have a name')
   for (const f of ['from', 'to']) {
-    if (!has(item, f)) throw error('A pool must have an %s address', f)
+    if (!has(item, f)) throw error('A pool must have a \'%s\' address', f)
     if (isString(item[f])) item[f] = [item[f]]
     for (const a of item[f]) {
       await addressVerify(a)
@@ -22,7 +21,7 @@ async function init () {
   opts.wildcard = true
   opts.delimiter = '.'
   this.bajoEmitter.instance = new EventEmitter2(opts)
-  this.bajoEmitter.broadcastPools = await buildCollections({ handler, container: 'broadcastPools', dupChecks: ['name', 'transport'] })
+  this.bajoEmitter.broadcastPools = await buildCollections({ handler, container: 'broadcastPools', dupChecks: ['name'] })
   await collectEvents.call(this)
 }
 
