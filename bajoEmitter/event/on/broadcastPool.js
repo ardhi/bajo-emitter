@@ -9,6 +9,10 @@ const broadcastPool = {
       return p.from.includes(from)
     })
     for (const p of pools) {
+      if (p.handler) {
+        await callHelperOrHandler(p.handler, { from, to, subject, msg })
+        continue
+      }
       let ok = true
       if (p.filter) ok = await callHelperOrHandler(p.filter, { from, to, subject, msg })
       if (!ok) continue
