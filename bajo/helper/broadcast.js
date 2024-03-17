@@ -8,8 +8,8 @@
  * @param {Object} params - Event parameters/arguments
  */
 
-async function broadcast ({ msg, from, to }) {
-  this.bajoEmitter.instance.emit('bajoEmitter.broadcastPool', { msg, from, to })
+async function broadcast ({ msg, from, to, subject }) {
+  this.bajoEmitter.instance.emit('bajoEmitter.broadcastPool', { msg, from, to, subject })
 }
 
 export default broadcast
