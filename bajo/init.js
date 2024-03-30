@@ -9,7 +9,7 @@ async function handler ({ item }) {
     if (!item[f]) continue
     if (isString(item[f])) item[f] = [item[f]]
     for (const a of item[f]) {
-      await addressVerify(a)
+      await addressVerify(a, { skipConnectionCheck: item.skipConnectionCheck })
     }
   }
   if (!item.from || item.from.length === 0) throw error('A pool must have a \'from\' address')
