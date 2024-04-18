@@ -1,7 +1,7 @@
-async function verify (address, { skipConnectionCheck = false } = {}) {
+function verify (address, { skipConnectionCheck = false } = {}) {
   const { addressSplit } = this.bajoEmitter.helper
-  const { importPkg, error, isSet } = this.bajo.helper
-  const { isEmpty, find } = await importPkg('lodash-es')
+  const { error, isSet } = this.bajo.helper
+  const { isEmpty, find } = this.bajo.helper._
   const { destination, connection, transport } = addressSplit(address)
   if (!isSet(destination) || isEmpty(connection) || isEmpty(transport)) throw error('Invalid address \'%s\'', address)
   if (!this[transport]) throw error('Unknown transport \'%s\' or transport isn\'t loaded yet', transport)

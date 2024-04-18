@@ -3,8 +3,7 @@ const broadcastPool = {
   handler: async function onBroadcastPool ({ msg, from, to, subject }) {
     const { callHelperOrHandler } = this.bajo.helper
     const { addressSplit } = this.bajoEmitter.helper
-    const { importPkg } = this.bajo.helper
-    const { get, isFunction, filter } = await importPkg('lodash-es')
+    const { get, isFunction, filter } = this.bajo.helper._
     const pools = filter(this.bajoEmitter.broadcastPools, p => {
       return p.from.includes(from)
     })
