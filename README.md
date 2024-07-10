@@ -1,4 +1,6 @@
-# bajo-config
+# bajo-emitter
+
+Plugin name: **bajoEmitter**, alias: **emitter**
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/ardhi/bajo-emitter) ![NPM Version](https://img.shields.io/npm/v/bajo-emitter)
 
