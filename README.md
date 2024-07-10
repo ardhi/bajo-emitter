@@ -2,6 +2,8 @@
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/ardhi/bajo-emitter) ![NPM Version](https://img.shields.io/npm/v/bajo-emitter)
 
+> <br />**Attention**: I do NOT accept any pull request at the moment, thanks!<br /><br />
+
 Event emitter and message broker for [Bajo Framework](https://github.com/ardhi/bajo)
 based on excellence [EventEmitter2](https://github.com/EventEmitter2/EventEmitter2).
 
