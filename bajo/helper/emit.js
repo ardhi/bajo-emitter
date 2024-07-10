@@ -1,5 +1,5 @@
-function emit (name, ...params) {
-  this.instance.emit(name, ...params)
+function emit (event, ...params) {
+  this.instance.emit(event, ...params)
 }
 
 export default emit

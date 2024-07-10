@@ -1,4 +1,4 @@
 {
-  "maxListeners": 20,
+  "maxListeners": 100,
   "broadcastPools": []
 }
