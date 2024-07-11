@@ -3,8 +3,8 @@ import collectEvents from '../lib/collect-events.js'
 import handler from '../lib/collect-broadcast-pools.js'
 
 async function init () {
-  const { pick } = this.app.bajo.helper._
-  const { buildCollections } = this.app.bajo.helper
+  const { pick } = this.app.bajo.lib._
+  const { buildCollections } = this.app.bajo
   this.broadcastPools = await buildCollections({ ns: this.name, handler, container: 'broadcastPools', dupChecks: ['name'] })
   const opts = pick(this.config, ['maxListeners', 'verboseMemoryLeak', 'ignoreErrors'])
   opts.wildcard = true
