@@ -6,7 +6,7 @@ async function init () {
   const { pick } = this.app.bajo.lib._
   const { buildCollections } = this.app.bajo
   this.broadcastPools = await buildCollections({ ns: this.name, handler, container: 'broadcastPools', dupChecks: ['name'] })
-  const opts = pick(this.config, ['maxListeners', 'verboseMemoryLeak', 'ignoreErrors'])
+  const opts = pick(this.getConfig(), ['maxListeners', 'verboseMemoryLeak', 'ignoreErrors'])
   opts.wildcard = true
   opts.delimiter = '.'
   this.instance = new EventEmitter2(opts)
