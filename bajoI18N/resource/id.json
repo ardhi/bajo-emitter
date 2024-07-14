@@ -1,3 +1,4 @@
 {
-  "[%s] Call listener '%s'": "[%s] Memanggil pendengar '%s'"
+  "[%s] Call listener '%s'": "[%s] Memanggil pendengar '%s'",
+  "[%s] - Collect %s: %s:%s.%s (%d)": "[%s] - Koleksi %s: %s:%s.%s (%d)"
 }
