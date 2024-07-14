@@ -2,7 +2,7 @@ import EventEmitter2 from 'eventemitter2'
 import collectEvents from '../lib/collect-events.js'
 import handler from '../lib/collect-broadcast-pools.js'
 
-async function init () {
+async function start () {
   const { pick } = this.app.bajo.lib._
   const { buildCollections } = this.app.bajo
   this.broadcastPools = await buildCollections({ ns: this.name, handler, container: 'broadcastPools', dupChecks: ['name'] })
@@ -13,4 +13,4 @@ async function init () {
   await collectEvents.call(this)
 }
 
-export default init
+export default start
