@@ -1,21 +1,21 @@
 const broadcastPool = {
   level: 1,
   handler: async function onBroadcastPool ({ msg, from, to, subject }) {
-    const { callMethodOrHandler } = this.app.bajo
+    const { callHandler } = this.app.bajo
     const { get, isFunction, filter, isEmpty } = this.app.bajo.lib._
     const pools = filter(this.broadcastPools, p => {
       return p.from.includes(from)
     })
     for (const p of pools) {
       if (p.handler) {
-        await callMethodOrHandler(p.handler, { from, to, subject, msg })
+        await callHandler(p.handler, { from, to, subject, msg })
         continue
       }
       let ok = true
-      if (p.filter) ok = await callMethodOrHandler(p.filter, { from, to, subject, msg })
+      if (p.filter) ok = await callHandler(p.filter, { from, to, subject, msg })
       if (!ok) continue
       let item = msg
-      if (p.transformer) item = await callMethodOrHandler(p.transformer, { from, to, subject, msg })
+      if (p.transformer) item = await callHandler(p.transformer, { from, to, subject, msg })
       if (!p.to) return
       for (let t of p.to) {
         const addr = this.addressSplit(t)
