@@ -6,8 +6,8 @@ Plugin name: **bajoEmitter**, alias: **emitter**
 
 > <br />**Attention**: I do NOT accept any pull request at the moment, thanks!<br /><br />
 
-Event emitter and message broker for [Bajo Framework](https://github.com/ardhi/bajo)
-based on excellence [EventEmitter2](https://github.com/EventEmitter2/EventEmitter2).
+Event emitter and message broker for [Bajo](https://github.com/ardhi/bajo)
+based on the excellent [EventEmitter2](https://github.com/EventEmitter2/EventEmitter2).
 
 ## Installation
 
