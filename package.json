@@ -1,6 +1,6 @@
 {
   "name": "bajo-emitter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Event emitter for Bajo Framework",
   "main": "index.js",
   "scripts": {
